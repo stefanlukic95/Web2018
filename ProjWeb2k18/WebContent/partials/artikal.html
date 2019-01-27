@@ -1,0 +1,15 @@
+<div ng-controller="prikazArtikalController">
+    <a class="list-group-item clearfix" ng-repeat="artikal in artikli">
+        <div class="pull-left">
+          <h4 class="list-group-item-heading">Item name: <b>{{artikal.naziv}}</b> <span ng-if="artikal.deleted" style="color: red">DELETED</span></h4>
+          <p class="list-group-item-text">Description: <b>{{artikal.opis}}</b></p>
+          <p class="list-group-item-text">Type: <b>{{artikal.tip}}</b></p>
+          <p class="list-group-item-text">Quantity: <b>{{artikal.kolicina}}</b></p>
+          <p class="list-group-item-text">Price: <b>{{artikal.cena}}</b></p>
+        </div>
+        <div class="pull-right">
+          <button class="btn btn-primary" ng-click="go(artikal.id)">Update</button>
+          <button class="btn btn-danger" ng-if="!artikal.deleted" ng-click="delete(artikal.id)">Delete</button>
+        </div>
+      </a>
+</div>
